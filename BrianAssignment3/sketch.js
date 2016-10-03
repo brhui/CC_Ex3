@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(232, 255, 212);
+  background(232, 255, 212); // Redraw the background everytime through the sketch.
 
   // Rectangle will move down at the variable of rectSpeed
   rectY += rectSpeed
@@ -120,91 +120,94 @@ function draw() {
   fill(0, 164, 255, 127);
   triangle(mtriX1, mtriY1, mtriX2, mtriY2, mtriX3, mtriY3);
 
-  // Pressing the "W" key will move the triangle up.
-  if (key == 'w' || key == 'W') {
-    mtriY1 -= 2;
-    mtriY2 -= 2;
-    mtriY3 -= 2;
-    console.log("Triangle is moving up!")
-  }
+  // This keyIsPressed will make sure that the triangle stops moving when the key is released.
+  if (keyIsPressed) {
+    // Pressing the "W" key will move the triangle up.
+    if (key == 'w' || key == 'W') {
+      mtriY1 -= 2;
+      mtriY2 -= 2;
+      mtriY3 -= 2;
+      console.log("Triangle is moving up!")
+    }
 
-  // Pressing the "S" key will move the triangle down.
-  if (key == 's' || key == 'S') {
-    mtriY1 += 2;
-    mtriY2 += 2;
-    mtriY3 += 2;
-    console.log("Triangle is moving down!")
-  }
+    // Pressing the "S" key will move the triangle down.
+    if (key == 's' || key == 'S') {
+      mtriY1 += 2;
+      mtriY2 += 2;
+      mtriY3 += 2;
+      console.log("Triangle is moving down!")
+    }
 
-  // Pressing the "A" key will move the triangle left.
-  if (key == 'a' || key == 'A') {
-    mtriX1 -= 2;
-    mtriX2 -= 2;
-    mtriX3 -= 2;
-    console.log("Triangle is moving left!")
-  }
+    // Pressing the "A" key will move the triangle left.
+    if (key == 'a' || key == 'A') {
+      mtriX1 -= 2;
+      mtriX2 -= 2;
+      mtriX3 -= 2;
+      console.log("Triangle is moving left!")
+    }
 
-  // Pressing the "D" key will move the triangle right.
-  if (key == 'd' || key == 'D') {
-    mtriX1 += 2;
-    mtriX2 += 2;
-    mtriX3 += 2;
-    console.log("Triangle is moving right!")
-  }
+    // Pressing the "D" key will move the triangle right.
+    if (key == 'd' || key == 'D') {
+      mtriX1 += 2;
+      mtriX2 += 2;
+      mtriX3 += 2;
+      console.log("Triangle is moving right!")
+    }
 
-  // Pressing the "Q" key will make the triangle go diagonally to the left and up.
-  if (key == 'q' || key == 'Q') {
-    mtriX1 -= 2;
-    mtriX2 -= 2;
-    mtriX3 -= 2;
-    mtriY1 -= 2;
-    mtriY2 -= 2;
-    mtriY3 -= 2;
-    console.log("Triangle is moving up and left!")
-  }
+    // Pressing the "Q" key will make the triangle go diagonally to the left and up.
+    if (key == 'q' || key == 'Q') {
+      mtriX1 -= 2;
+      mtriX2 -= 2;
+      mtriX3 -= 2;
+      mtriY1 -= 2;
+      mtriY2 -= 2;
+      mtriY3 -= 2;
+      console.log("Triangle is moving up and left!")
+    }
 
-  // Pressing the "E" key will make the triangle go diagonally to the right and up.
-  if (key == 'e' || key == 'E') {
-    mtriX1 += 2;
-    mtriX2 += 2;
-    mtriX3 += 2;
-    mtriY1 -= 2;
-    mtriY2 -= 2;
-    mtriY3 -= 2;
-    console.log("Triangle is moving up and right!")
-  }
+    // Pressing the "E" key will make the triangle go diagonally to the right and up.
+    if (key == 'e' || key == 'E') {
+      mtriX1 += 2;
+      mtriX2 += 2;
+      mtriX3 += 2;
+      mtriY1 -= 2;
+      mtriY2 -= 2;
+      mtriY3 -= 2;
+      console.log("Triangle is moving up and right!")
+    }
 
-  // Pressing the "C" key will make the triangle go diagonally to the right and down.
-  if (key == 'c' || key == 'C') {
-    mtriX1 += 2;
-    mtriX2 += 2;
-    mtriX3 += 2;
-    mtriY1 += 2;
-    mtriY2 += 2;
-    mtriY3 += 2;
-    console.log("Triangle is moving down and right!")
-  }
+    // Pressing the "C" key will make the triangle go diagonally to the right and down.
+    if (key == 'c' || key == 'C') {
+      mtriX1 += 2;
+      mtriX2 += 2;
+      mtriX3 += 2;
+      mtriY1 += 2;
+      mtriY2 += 2;
+      mtriY3 += 2;
+      console.log("Triangle is moving down and right!")
+    }
 
-  // Pressing the "Z" key will make the triangle go diagonally to the left and down.
-  if (key == 'z' || key == 'Z') {
-    mtriX1 -= 2;
-    mtriX2 -= 2;
-    mtriX3 -= 2;
-    mtriY1 += 2;
-    mtriY2 += 2;
-    mtriY3 += 2;
-    console.log("Triangle is moving down and left!")
-  }
+    // Pressing the "Z" key will make the triangle go diagonally to the left and down.
+    if (key == 'z' || key == 'Z') {
+      mtriX1 -= 2;
+      mtriX2 -= 2;
+      mtriX3 -= 2;
+      mtriY1 += 2;
+      mtriY2 += 2;
+      mtriY3 += 2;
+      console.log("Triangle is moving down and left!")
+    }
 
-  // Pressing the "R" key will reset the triangle's position.
-  if (key == 'r' || key == 'R') {
-    mtriX1 = 200;
-    mtriX2 = 125;
-    mtriX3 = 275;
-    mtriY1 = 266;
-    mtriY2 = 366;
-    mtriY3 = 366;
-    console.log("Triangle position reset!")
+    // Pressing the "R" key will reset the triangle's position.
+    if (key == 'r' || key == 'R') {
+      mtriX1 = 200;
+      mtriX2 = 125;
+      mtriX3 = 275;
+      mtriY1 = 266;
+      mtriY2 = 366;
+      mtriY3 = 366;
+      console.log("Triangle position reset!")
+    }
   }
 
   // This makes the triangle wrap around back onto the canvas if it leaves the canvas' visible area.
